@@ -1,6 +1,11 @@
 <template>
   <div class="plan">
-    <Plan v-for="plan in plans" :name="plan" :key="plan" />
+    <Plan
+      v-for="plan in plans"
+      :name="plan" :key="plan"
+      @select="selectPlan"
+      :selected-plan="selectedPlan"
+    />
   </div>
 </template>
 
@@ -13,12 +18,17 @@ export default {
     Plan
   },
   data: () => ({
-    plans: ['The Hacker', 'The Single', 'The Curious', 'The Addict']
-  }) 
+    plans: ['The Hacker', 'The Single', 'The Curious', 'The Addict'],
+    selectedPlan: null
+  }),
+  methods: {
+    selectPlan(plan) {
+      this.selectedPlan = plan
+    }
+  }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
   margin: 40px 0 0;

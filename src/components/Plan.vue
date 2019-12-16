@@ -1,5 +1,5 @@
 <template>
-  <div class="plan">
+  <div @click="select" class="plan" :class="{'active-plan': isSelected}">
     <div class="description">
       <br>
       <span class="title">
@@ -18,6 +18,21 @@ export default {
       type: String,
       default: 'The Default',
       required: true
+    },
+    selectedPlan: { type: String }
+  },
+  computed: {
+    isSelected() {
+      return this.name === this.selectedPlan
+    }
+  },
+  /* data: () => ({
+    selected: false
+  }), */
+  methods: {
+    select() {
+      this.$emit('select', this.name)
+      // this.selected = true
     }
   }
 }
@@ -38,5 +53,8 @@ li {
 }
 a {
   color: #42b983;
+}
+.active-plan {
+  background-color: blueviolet
 }
 </style>

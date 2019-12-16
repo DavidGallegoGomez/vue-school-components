@@ -7,7 +7,6 @@
       <h2 class="subtitle">We travel the world to source the very best single origin coffee for you</h2>
       <div class="plans">
         <plan-picker />
-        <Plan name="Super"/>
       </div>
     </div>
   </div>
@@ -16,14 +15,12 @@
 <script>
 import ClickCounter from '@/components/ClickCounter.vue'
 import PlanPicker from '@/components/PlanPicker.vue'
-import Plan from '@/components/Plan.vue'
 
 export default {
   name: 'app',
   components: {
     ClickCounter,
-    PlanPicker,
-    Plan
+    PlanPicker
   } 
 }
 </script>
