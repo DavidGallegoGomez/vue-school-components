@@ -1,18 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ClickCounter />
+    <br>
+    <div class="content">
+      <h1 class="title">Coffee Plans</h1>
+      <h2 class="subtitle">We travel the world to source the very best single origin coffee for you</h2>
+      <div class="plans">
+        <plan-picker />
+        <Plan name="Super"/>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ClickCounter from '@/components/ClickCounter.vue'
+import PlanPicker from '@/components/PlanPicker.vue'
+import Plan from '@/components/Plan.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
-  }
+    ClickCounter,
+    PlanPicker,
+    Plan
+  } 
 }
 </script>
 
